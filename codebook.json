@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "title": "KSA 数据字典 / KSA Data Codebook",
+    "version": "1.0",
+    "generated_at": "2026-03-27T17:32:11.056675",
+    "source": "《中国职业分类大典（2022）》",
+    "total_occupations": 1616
+  },
+  "variables": {
+    "occupation": {
+      "occupation_code": {
+        "en": "Occupation Code",
+        "zh": "职业代码",
+        "type": "String",
+        "example": "1-01-00-01",
+        "description_en": "Unique identifier for each occupation in the Chinese Classification of Occupations (2022)",
+        "description_zh": "《中国职业分类大典（2022）》中每个职业的唯一标识符"
+      },
+      "occupation_name": {
+        "en": "Occupation Name",
+        "zh": "职业名称",
+        "type": "String",
+        "example": "中国共产党机关负责人",
+        "description_en": "Official name of the occupation in Chinese",
+        "description_zh": "职业的官方中文名称"
+      },
+      "isco08_code": {
+        "en": "ISCO-08 Code",
+        "zh": "ISCO-08 代码",
+        "type": "String (4 digits)",
+        "example": "1349",
+        "description_en": "International Standard Classification of Occupations 2008 code",
+        "description_zh": "国际标准职业分类 2008 代码"
+      },
+      "isco08_title": {
+        "en": "ISCO-08 Title",
+        "zh": "ISCO-08 名称",
+        "type": "String",
+        "example": "Business Services Administrators",
+        "description_en": "ISCO-08 occupation title in English",
+        "description_zh": "ISCO-08 职业英文名称"
+      }
+    },
+    "task": {
+      "task_id": {
+        "en": "Task ID",
+        "zh": "任务编号",
+        "type": "String",
+        "example": "T001",
+        "description_en": "Unique identifier for each atomic task",
+        "description_zh": "每个原子任务的唯一标识符"
+      },
+      "task_description": {
+        "en": "Task Description",
+        "zh": "任务描述",
+        "type": "String",
+        "example": "制定组织发展战略",
+        "description_en": "Verb-object structure describing the atomic task",
+        "description_zh": "动宾结构描述原子任务"
+      },
+      "weight_category": {
+        "en": "Weight Category",
+        "zh": "权重类别",
+        "type": "String",
+        "values": {
+          "Primary": "主要任务 (60% of total weight)",
+          "Secondary": "次要任务 (30% of total weight)",
+          "Ancillary": "辅助任务 (10% of total weight)"
+        },
+        "description_en": "Task importance category with standard weight distribution",
+        "description_zh": "任务重要性类别，按标准权重分配"
+      },
+      "weight_percentage": {
+        "en": "Weight Percentage",
+        "zh": "权重百分比",
+        "type": "Float (0-1)",
+        "example": 0.12,
+        "description_en": "Task weight, sum of all tasks = 1.00",
+        "description_zh": "任务权重，所有任务之和=1.00"
+      }
+    },
+    "ksa": {
+      "ksa_id": {
+        "en": "KSA ID",
+        "zh": "KSA 编号",
+        "type": "String",
+        "example": "K001, S001, A001",
+        "description_en": "K=Knowledge, S=Skill, A=Ability",
+        "description_zh": "K=知识，S=技能，A=能力"
+      },
+      "ksa_unit_name": {
+        "en": "KSA Unit Name",
+        "zh": "KSA 单元名称",
+        "type": "String",
+        "example": "宏观经济知识",
+        "description_en": "Name of the knowledge/skill/ability unit",
+        "description_zh": "知识/技能/能力单元名称"
+      },
+      "ksa_definition": {
+        "en": "KSA Definition",
+        "zh": "KSA 定义",
+        "type": "String",
+        "description_en": "Definition in the context of this occupation",
+        "description_zh": "该职业语境下的定义"
+      },
+      "ksa_type": {
+        "en": "KSA Type",
+        "zh": "KSA 类型",
+        "type": "String",
+        "values": {
+          "Knowledge": "知识",
+          "Skill": "技能",
+          "Ability": "能力"
+        }
+      },
+      "ksa_subcategory": {
+        "en": "KSA Subcategory",
+        "zh": "KSA 子类别",
+        "type": "String",
+        "values": {
+          "Knowledge": {
+            "Declarative": "陈述性知识 (知道是什么)",
+            "Procedural": "程序性知识 (知道怎么做)",
+            "Strategic": "战略性知识 (知道为什么)"
+          },
+          "Skill": {
+            "Technical": "技术技能",
+            "Interpersonal": "人际技能",
+            "Cognitive": "认知技能"
+          },
+          "Ability": {
+            "Cognitive": "认知能力",
+            "Physical": "身体能力",
+            "Social": "社会能力"
+          }
+        }
+      }
+    },
+    "cas": {
+      "substitutivity": {
+        "en": "Substitutivity Score",
+        "zh": "替代性评分",
+        "type": "Float (0-1) or Integer (1-5)",
+        "description_en": "AI ability to independently take over the task (1=lowest, 5=highest)",
+        "description_zh": "AI 独立接管任务的能力 (1=最低，5=最高)"
+      },
+      "augmentation": {
+        "en": "Augmentation Score",
+        "zh": "增强性评分",
+        "type": "Float (0-1) or Integer (1-5)",
+        "description_en": "AI ability to enhance task performance (1=lowest, 5=highest)",
+        "description_zh": "AI 提升任务绩效的能力 (1=最低，5=最高)"
+      },
+      "complementarity": {
+        "en": "Complementarity Score",
+        "zh": "互补性评分",
+        "type": "Float (0-1) or Integer (1-5)",
+        "description_en": "AI-human collaboration potential (1=lowest, 5=highest)",
+        "description_zh": "人机协作潜力 (1=最低，5=最高)"
+      }
+    },
+    "attributes": {
+      "cognitive_requirement": {
+        "en": "Cognitive Requirement",
+        "zh": "认知门槛",
+        "type": "Integer (1-100)",
+        "description_en": "Cognitive threshold (1=simple repetition, 100=top expert decision)",
+        "description_zh": "认知门槛 (1=简单重复，100=顶尖专家决策)"
+      },
+      "physicality_intensity": {
+        "en": "Physicality Intensity",
+        "zh": "体力强度",
+        "type": "Integer (1-100)",
+        "description_en": "Physical labor dependence (1=pure office work, 100=heavy physical labor)",
+        "description_zh": "体力依赖 (1=纯脑力办公，100=重体力劳动)"
+      },
+      "language_intensity": {
+        "en": "Language Intensity",
+        "zh": "语言强度",
+        "type": "Integer (1-100)",
+        "description_en": "Language dependence (1=almost no language, 100=high language dependence)",
+        "description_zh": "语言依赖 (1=几乎无语言，100=高语言依赖)"
+      }
+    }
+  }
+}
